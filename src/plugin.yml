@@ -22,6 +22,10 @@ commands:
     description: Cook the item in your hand (or [All] items in inventory)
     usage: /<command> [All]
     aliases: [cook]
+  cookreload:
+    description: Reload the messages from the config
+    usage: /<command>
+    aliases: [cookreload]
 
 ##############################################
 #                Permissions                 #
@@ -34,6 +38,7 @@ permissions:
     children:
       cook.command: true
       cook.food: true
+      cook.reload: true
   cook.command:
     default: false
     description: Gives access to the cook command(s)
@@ -86,3 +91,6 @@ permissions:
   cook.kelp:
     default: false
     description: Gives permission to cook kelp
+  cook.reload:
+    default: false
+    description: Gives permission to use /cookreload

@@ -1,0 +1,17 @@
+#============================================#
+#                  Messages                  #
+#============================================#
+cook:
+    hand: "&7We have &2cooked &7the item you were holding!"
+    all: "&7We have &2cooked &7as many of your items as we can!"
+
+#============================================#
+#                   Syntax                   #
+#============================================#
+syntax:
+    hand: "&7We are unable to &ccook &7the item you are holding!"
+
+#============================================#
+#                    Reload                  #
+#============================================#
+reload: "&8[&7Cook&8] &aReload Completed!"

@@ -32,13 +32,24 @@ public class CookCommand implements CommandExecutor
           }
         }
       }
+      sender.sendMessage(cook.CleanMessage(cook.getConfig().getString("cook.all")));
       return true;
     }
     
     // Cook hand
     if (sender.hasPermission("cook.command.hand"))
     {
-      
+      if (((Player)sender).getInventory().getItemInMainHand() != null)
+      {
+        Cooked material = cook.getCooked(((Player)sender).getInventory().getItemInMainHand().getType());
+        if ((material != null) && (sender.hasPermission(material.permission)))
+        { // Cook it :)
+          ((Player)sender).getInventory().getItemInMainHand().setType(material.material);
+          sender.sendMessage(cook.CleanMessage(cook.getConfig().getString("cook.hand")));
+          return true;
+        }
+        else { sender.sendMessage(cook.CleanMessage(cook.getConfig().getString("syntax.hand"))); return false; }
+      }
     }
     return false;
   }
