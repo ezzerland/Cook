@@ -7,14 +7,14 @@ import org.bukkit.entity.Player;
 
 import ezzerland.ravenloftmc.Cook;
 
-public class Reload implements CommandExecutor
+public class CookReload implements CommandExecutor
 {
   private Cook cook;
-  public Reload (Cook plugin) { cook=plugin; }
+  public CookReload (Cook plugin) { cook=plugin; }
   
   public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
   {
-    if ((!(sender instanceof Player)) || (sender.hasPermission("mygamemode.reload")))
+    if ((!(sender instanceof Player)) || (sender.hasPermission("cook.reload")))
     {
       cook.doReload();
       sender.sendMessage(cook.CleanMessage(cook.getConfig().getString("reload")));

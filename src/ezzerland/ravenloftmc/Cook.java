@@ -6,7 +6,7 @@ import org.bukkit.Material;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import ezzerland.ravenloftmc.commands.CookCommand;
-import ezzerland.ravenloftmc.commands.Reload;
+import ezzerland.ravenloftmc.commands.CookReload;
 import ezzerland.ravenloftmc.resource.Cookable;
 import ezzerland.ravenloftmc.resource.Cookable.Cooked;
 
@@ -22,7 +22,7 @@ public class Cook extends JavaPlugin
     cookable = new HashMap<Material, Cooked>();
     cookable = materials.getCookableMaterials();
     getCommand("cook").setExecutor(new CookCommand(this));
-    getCommand("cookreload").setExecutor(new Reload(this));
+    getCommand("cookreload").setExecutor(new CookReload(this));
   }
   
   public Cooked getCooked(Material toCook)
