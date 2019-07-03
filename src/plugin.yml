@@ -1,0 +1,88 @@
+##############################################
+#                     Cook                   #
+#--------------------------------------------#
+# Turns Raw material into Cooked material    #
+##############################################
+
+name: Cook
+version: 1.0.0
+api-version: 1.14
+main: ezzerland.ravenloftmc.Cook
+load: POSTWORLD
+description: "Turns Raw material into Cooked material"
+author: Ezzerland
+authors: [Twage, Infraction]
+
+##############################################
+#                  Commands                  #
+##############################################
+
+commands:
+  cook:
+    description: Cook the item in your hand (or [All] items in inventory)
+    usage: /<command> [All]
+    aliases: [cook]
+
+##############################################
+#                Permissions                 #
+##############################################
+
+permissions:
+  cook.*:
+    default: op
+    description: Access to all permissions
+    children:
+      cook.command: true
+      cook.food: true
+  cook.command:
+    default: false
+    description: Gives access to the cook command(s)
+    children:
+      cook.command.hand: true
+      cook.command.all: true
+  cook.food:
+    default: false
+    description: Gives access to cook all food type materials
+    children:
+      cook.potato: true
+      cook.rabbit: true
+      cook.mutton: true
+      cook.porkchop: true
+      cook.chicken: true
+      cook.beef: true
+      cook.salmon: true
+      cook.cod: true
+      cook.kelp: true
+  cook.command.hand:
+    default: false
+    description: Allows player to /cook item in hand (if they have permission for that material)
+  cook.command.all:
+    default: false
+    description: Allows player to /cook all items in their inventory (if they have permission for the materials)
+  cook.potato:
+    default: false
+    description: Gives permission to cook potato
+  cook.rabbit:
+    default: false
+    description: Gives permission to cook rabbit
+  cook.mutton:
+    default: false
+    description: Gives permission to cook mutton
+  cook.porkchop:
+    default: false
+    description: Gives permission to cook porkchop
+  cook.chicken:
+    default: false
+    description: Gives permission to cook chicken
+  cook.beef:
+    default: false
+    description: Gives permission to cook beef
+  cook.salmon:
+    default: false
+    description: Gives permission to cook salmon
+  cook.cod:
+    default: false
+    description: Gives permission to cook cod
+  cook.kelp:
+    default: false
+    description: Gives permission to cook kelp
