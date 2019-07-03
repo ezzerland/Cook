@@ -13,14 +13,11 @@ import ezzerland.ravenloftmc.resource.Cookable.Cooked;
 public class Cook extends JavaPlugin
 {
   private HashMap<Material, Cooked> cookable;
-  private Cookable materials;
   
   public void onEnable()
   {
     saveDefaultConfig();
-    materials = new Cookable();
-    cookable = new HashMap<Material, Cooked>();
-    cookable = materials.getCookableMaterials();
+    cookable = new Cookable().getCookableMaterials();
     getCommand("cook").setExecutor(new CookCommand(this));
     getCommand("cookreload").setExecutor(new CookReload(this));
   }
